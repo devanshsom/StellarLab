@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StellarLab</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>⭐ StellarLab</h1>
+            <p>Discover the wonders of space through interactive learning</p>
+        </div>
+
+        <div class="dashboard">
+            <!-- Quiz Section -->
+            <div class="card">
+                <h2>🧠 Space Knowledge Quiz</h2>
+                <div class="quiz-container">
+                    <div class="question" id="question">Loading question...</div>
+                    <div class="options" id="options"></div>
+                    <div class="quiz-controls">
+                        <button class="btn" id="nextBtn" onclick="nextQuestion()" disabled>Next Question</button>
+                        <div class="score">Score: <span id="score">0</span>/10</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Section -->
+            <div class="card">
+                <h2>🌌 Space Gallery</h2>
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Slides will be populated by JavaScript -->
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn" onclick="previousSlide()">◀ Previous</button>
+                    <div class="carousel-indicators" id="indicators"></div>
+                    <button class="carousel-btn" onclick="nextSlide()">Next ▶</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- API Data Section -->
+        <div class="card api-section">
+            <h2>🛰️ Live Space Data</h2>
+            <div class="api-controls">
+                <button class="btn" onclick="fetchSpaceData('people')">People in Space</button>
+                <button class="btn" onclick="fetchSpaceData('apod')">Astronomy Picture</button>
+                <button class="btn" onclick="fetchSpaceData('mars')">Mars Weather</button>
+                <button class="btn" onclick="fetchSpaceData('iss')">ISS Location</button>
+            </div>
+            <div class="api-data" id="apiData">
+                <p>Click a button above to fetch live space data!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
